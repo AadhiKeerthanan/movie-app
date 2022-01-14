@@ -13,16 +13,17 @@ export default function AutocompleteOne() {
     setIsLoading,
   } = useContext(UserContext);
 
-  const apiKey = process.env.REACT_APP_API_KEY;
-
   const movieInfo = async (movId) => {
     try {
       setText("");
       setShowMovieData(true);
       setIsLoading(true);
-      const response = await axios.post("http://localhost:8000/moviedata", {
-        movieId: movId,
-      });
+      const response = await axios.post(
+        "https://mini-movie-backend.herokuapp.com/moviedata",
+        {
+          movieId: movId,
+        }
+      );
       const movieDetials = response.data.movieData;
       setIsLoading(false);
       setDetails(movieDetials);

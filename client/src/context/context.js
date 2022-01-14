@@ -27,9 +27,12 @@ function UserContextProvider(props) {
       }
       setText(e.target.value);
       setIsLoading(true);
-      const response = await axios.post("http://localhost:8000/searchmovies", {
-        title: e.target.value,
-      });
+      const response = await axios.post(
+        "https://mini-movie-backend.herokuapp.com/searchmovies",
+        {
+          title: e.target.value,
+        }
+      );
       console.log(response.data);
       const lists = response.data.result;
       console.log("api call has been made", lists);
@@ -49,9 +52,12 @@ function UserContextProvider(props) {
       }
       setTextTwo(e.target.value);
       setIsLoadingTwo(true);
-      const response = await axios.post("http://localhost:8000/searchmovies", {
-        title: e.target.value,
-      });
+      const response = await axios.post(
+        "https://mini-movie-backend.herokuapp.com/searchmovies",
+        {
+          title: e.target.value,
+        }
+      );
       const lists = response.data.result;
       console.log("api call has been made", lists);
       setIsLoadingTwo(false);

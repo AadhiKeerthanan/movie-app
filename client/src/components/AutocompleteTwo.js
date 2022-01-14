@@ -18,9 +18,12 @@ export default function AutocompleteTwo() {
       setTextTwo("");
       setShowMovieDataTwo(true);
       setIsLoadingTwo(true);
-      const response = await axios.post("http://localhost:8000/moviedata", {
-        movieId: movId,
-      });
+      const response = await axios.post(
+        "https://mini-movie-backend.herokuapp.com/moviedata",
+        {
+          movieId: movId,
+        }
+      );
       const movieDetials = response.data.movieData;
       setIsLoadingTwo(false);
       setDetailsTwo(movieDetials);
