@@ -30,6 +30,6 @@ app.post("/moviedata", async (req, res) => {
   });
 });
 
-app.listen(8000, () => {
+app.listen(process.env.PORT || 8001, () => {
   console.log("Server up and running");
 });
